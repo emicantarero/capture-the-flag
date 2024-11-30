@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   11155111: {
     Vendor: {
-      address: "0x000557d5D432b0041eBb6866c2d0c7588801e71f",
+      address: "0x241Bf3f4DAA9be06466fEA56d5b1C6E0A3F93BeC",
       abi: [
         {
           inputs: [
@@ -70,6 +70,31 @@ const deployedContracts = {
             {
               indexed: false,
               internalType: "address",
+              name: "seller",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "amountOfTokens",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "amountOfETH",
+              type: "uint256",
+            },
+          ],
+          name: "SellTokens",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "address",
               name: "owner",
               type: "address",
             },
@@ -106,6 +131,19 @@ const deployedContracts = {
         {
           inputs: [],
           name: "renounceOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "amount",
+              type: "uint256",
+            },
+          ],
+          name: "sellTokens",
           outputs: [],
           stateMutability: "nonpayable",
           type: "function",
@@ -164,7 +202,7 @@ const deployedContracts = {
       },
     },
     YourToken: {
-      address: "0x3C2906196Cf42B26EFdE3B31fB5F89a92004Ede9",
+      address: "0x695227b154dAE587A92954bb378c1B97999Ae76C",
       abi: [
         {
           inputs: [],

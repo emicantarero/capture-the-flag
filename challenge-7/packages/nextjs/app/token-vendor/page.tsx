@@ -168,7 +168,7 @@ const TokenVendor: NextPage = () => {
                 className={`btn ${isApproved ? "btn-secondary" : "btn-disabled"}`}
                 onClick={async () => {
                   try {
-                    await writeVendorAsync({ functionName: "sellTokens", args: [multiplyTo1e18(tokensToSell) as `0x${string}`]});
+                    await writeVendorAsync({ functionName: "sellTokens", args: [multiplyTo1e18(tokensToSell)]});
                     setIsApproved(false);
                   } catch (err) {
                     console.error("Error calling sellTokens function");
