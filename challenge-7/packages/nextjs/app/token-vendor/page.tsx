@@ -56,7 +56,7 @@ const TokenVendor: NextPage = () => {
               <span className="font-bold ml-1">{yourTokenSymbol}</span>
             </div>
           </div>
-          {/* Vendor Balances */}
+          Vendor Balances
           <hr className="w-full border-secondary my-3" />
           <div>
             Vendor token balance:{" "}
@@ -168,7 +168,7 @@ const TokenVendor: NextPage = () => {
                 className={`btn ${isApproved ? "btn-secondary" : "btn-disabled"}`}
                 onClick={async () => {
                   try {
-                    await writeVendorAsync({ functionName: "sellTokens", args: [tokensPerEth] });
+                    await writeVendorAsync({ functionName: "sellTokens", args: [multiplyTo1e18(tokensToSell) as `0x${string}`]});
                     setIsApproved(false);
                   } catch (err) {
                     console.error("Error calling sellTokens function");
@@ -179,7 +179,7 @@ const TokenVendor: NextPage = () => {
               </button>
             </div>
           </div>
-        )} 
+        )}
       </div>
     </>
   );
