@@ -318,7 +318,7 @@ const deployedContracts = {
       inheritedFunctions: {},
     },
     RiggedRoll: {
-      address: "0x7761C1e8D24AB5FCCaBCc1E2c92596b207cb56bB",
+      address: "0x8dB709a1e5ffFC4463E6694AFA0eA257FB5C9953",
       abi: [
         {
           inputs: [

