@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   31337: {
     DiceGame: {
-      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      address: "0x998abeb3E57409262aE5b751f60747921B33613E",
       abi: [
         {
           inputs: [],
@@ -104,7 +104,7 @@ const deployedContracts = {
       inheritedFunctions: {},
     },
     RiggedRoll: {
-      address: "0x9A676e781A523b5d0C0e43731313A708CB607508",
+      address: "0x70e0bA845a1A0F2DA3359C97E0285013525FFC49",
       abi: [
         {
           inputs: [
@@ -221,7 +221,7 @@ const deployedContracts = {
   },
   11155111: {
     DiceGame: {
-      address: "0x8838084F52eBDABc96b869CDAE2FC90E5A05275D",
+      address: "0xAABA3c5b05f4737Ae1C01A0646D1d6AAEA272038",
       abi: [
         {
           inputs: [],
@@ -318,7 +318,7 @@ const deployedContracts = {
       inheritedFunctions: {},
     },
     RiggedRoll: {
-      address: "0xe17CFb95F5C4644EbcD907C023235A4012c3CFF7",
+      address: "0x7761C1e8D24AB5FCCaBCc1E2c92596b207cb56bB",
       abi: [
         {
           inputs: [
